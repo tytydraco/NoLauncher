@@ -1,6 +1,7 @@
 package com.draco.nolauncher
 
 import android.app.WallpaperManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
@@ -11,9 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        window.decorView.setOnApplyWindowInsetsListener { _, windowInsets ->
-            windowInsets
-        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH)
+            window.decorView.setOnApplyWindowInsetsListener { _, windowInsets ->
+                windowInsets
+            }
 
         val pagedOnTouchListener = PagedOnTouchListener(this, 3)
         pagedOnTouchListener.pagedGestureListener.pageIndex.observe(this) {

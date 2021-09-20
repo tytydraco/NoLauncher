@@ -2,11 +2,8 @@ package com.draco.nolauncher
 
 import android.animation.Animator
 import android.animation.ValueAnimator
-import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
-import android.view.animation.LinearInterpolator
-import androidx.core.animation.addListener
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import java.util.concurrent.atomic.AtomicBoolean
